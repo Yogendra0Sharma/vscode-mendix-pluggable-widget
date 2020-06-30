@@ -13,12 +13,18 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onCommand:extension.installNodeJS",
 		"onCommand:extension.installGenerator",
 		"onCommand:extension.createWidget"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
+			{
+				"command": "extension.installNodeJS",
+				"category": "Mendix",
+				"title": "Install NodeJS"
+			},
 			{
 				"command": "extension.installGenerator",
 				"category": "Mendix",

@@ -7,8 +7,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	let installNodeJS = vscode.commands.registerCommand('extension.installNodeJS', () => {
 
-		terminal.sendText(`Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gunnargestsson/AdvaniaGIT/master/Scripts/Install-AdvaniaGIT.ps1" -OutFile "$($env:TEMP)\\Install-AdvaniaGIT.ps1" -ErrorAction Stop`);
-		terminal.sendText(`& "$($env:TEMP)\\Install-AdvaniaGIT.ps1"`);
+		terminal.sendText(`Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Yogendra0Sharma/vscode-mendix-pluggable-widget/master/utils/installNodeJs.ps1" -OutFile "$($env:TEMP)\\installNodeJs.ps1" -ErrorAction Stop`);
+		terminal.sendText(`& "$($env:TEMP)\\installNodeJs.ps1"`);
 
 	});
 	context.subscriptions.push(installNodeJS);
