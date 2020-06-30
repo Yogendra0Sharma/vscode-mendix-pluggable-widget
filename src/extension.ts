@@ -3,8 +3,17 @@ export function activate(context: vscode.ExtensionContext) {
 
 	let terminal: vscode.Terminal = vscode.window.createTerminal("mendix");
 	terminal.show(true);
-	let installGenerator = vscode.commands.registerCommand('extension.installGenerator', () => {
 
+
+	let installNodeJS = vscode.commands.registerCommand('extension.installNodeJS', () => {
+
+		terminal.sendText(`Invoke-WebRequest -Uri "https://raw.githubusercontent.com/gunnargestsson/AdvaniaGIT/master/Scripts/Install-AdvaniaGIT.ps1" -OutFile "$($env:TEMP)\\Install-AdvaniaGIT.ps1" -ErrorAction Stop`);
+		terminal.sendText(`& "$($env:TEMP)\\Install-AdvaniaGIT.ps1"`);
+
+	});
+	context.subscriptions.push(installNodeJS);
+
+	let installGenerator = vscode.commands.registerCommand('extension.installGenerator', () => {
 		terminal.sendText("npm install -g yo @mendix/generator-widget");
 	});
 
